@@ -10,9 +10,8 @@ publishing {
             url = uri("https://maven.pkg.github.com")
             credentials {
                 //username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                //password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+                password = System.getenv("GH_TOKEN")
                 username = "anupkumangodan"
-                password = "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"
             }
         }
     }
