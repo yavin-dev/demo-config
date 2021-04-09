@@ -12,7 +12,7 @@ publishing {
                 //username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
                 //password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
                 username = "anupkumangodan"
-                password = "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"
+                password = "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"
             }
         }
     }
