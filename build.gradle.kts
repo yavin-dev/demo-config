@@ -19,7 +19,7 @@ publishing {
 
     publications {
         create<MavenPublication>("maven") {
-            groupId = "yavin-dev.app"
+            groupId = "yavin-dev.demo-config"
             artifactId = "demo-config"
             version = "0.1"
 
