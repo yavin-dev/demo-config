@@ -14,5 +14,8 @@ jobs:
       - ./gradlew build
   publish: 
     requires: [~build]
+    secrets:
+        # Publishing to NPM
+        - GH_TOKEN
     steps:
       - ./gradlew publish
