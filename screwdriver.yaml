@@ -1,0 +1,12 @@
+shared:
+  image: maven:3.6.3-jdk-8
+  annotations:
+    screwdriver.cd/ram: TURBO
+    screwdriver.cd/cpu: TURBO
+jobs:
+  build: 
+    steps:
+      - ./gradlew build
+  publish: 
+    steps:
+      - ./gradlew publish
