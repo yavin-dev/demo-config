@@ -4,9 +4,15 @@ shared:
     screwdriver.cd/ram: TURBO
     screwdriver.cd/cpu: TURBO
 jobs:
+  pr_build:
+    requires: [~pr]
+    steps:
+      - ./gradlew build
   build: 
+    requires: [~commit]
     steps:
       - ./gradlew build
   publish: 
+    requires: [~build]
     steps:
       - ./gradlew publish
