@@ -17,5 +17,9 @@ jobs:
     secrets:
         # Publishing to NPM
         - GH_TOKEN
+        - GPG_KEY
+        - GPG_ENCPHRASE
+        - OSSRH_TOKEN
+        - OSSRH_USER
     steps:
       - ./gradlew publish
