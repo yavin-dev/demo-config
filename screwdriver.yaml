@@ -21,5 +21,6 @@ jobs:
         - GPG_ENCPHRASE
         - OSSRH_TOKEN
         - OSSRH_USER
+        - GPG_KEYNAME
     steps:
         - ./gradlew publish --debug
