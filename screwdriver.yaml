@@ -22,4 +22,4 @@ jobs:
         - OSSRH_TOKEN
         - OSSRH_USER
     steps:
-      - ./gradlew publish
+        - ./gradlew publish --debug
