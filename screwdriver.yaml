@@ -23,6 +23,8 @@ jobs:
         - GPG_ENCPHRASE
         - OSSRH_TOKEN
         - OSSRH_USER
+        - GPG_KEYNAME
+        - GPG_SIGN_PASS
     steps:
       - . ./decrypt.sh
       - ./gradlew publish -debug
