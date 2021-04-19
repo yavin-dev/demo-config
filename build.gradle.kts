@@ -52,10 +52,10 @@ publishing {
             val snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/") //uri(layout.buildDirectory.dir("repos/snapshots"))
             url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
             credentials {
-                username = project.findProperty("ossrhUsername") as String? ?: System.getenv("OSSRH_USER")  as String?
-                password = project.findProperty("ossrhPassword") as String? ?: System.getenv("OSSRH_TOKEN")  as String?
-                //username = System.getenv("OSSRH_USER") as String?
-                //password = System.getenv("OSSRH_TOKEN") as String?
+                //username = project.findProperty("ossrhUsername") as String? ?: System.getenv("OSSRH_USER")  as String?
+                //password = project.findProperty("ossrhPassword") as String? ?: System.getenv("OSSRH_TOKEN")  as String?
+                username = System.getenv("OSSRH_USER") as String?
+                password = System.getenv("OSSRH_TOKEN") as String?
 
             }
         }
