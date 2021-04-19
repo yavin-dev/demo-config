@@ -1,0 +1,4 @@
+OSSRH_TOKEN=NX6M88EYFdQk6Bl2VuTM711OIlheHNqdp+0dyU3Nu1c/
+OSSRH_USER=YeWIAxlP
+GPG_SIGN_PASS=Y@v!n !s @wesome data explorer
+GPG_ENCPHRASE=3Ncrypt0musD~y@v1n

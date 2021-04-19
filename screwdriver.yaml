@@ -12,7 +12,9 @@ jobs:
     requires: [~commit]
     steps:
       - ./gradlew build
-  publish: 
+  publish:
+    environment:
+        GPG_ENCPHRASE: something
     requires: [~build]
     secrets:
         # Publishing to NPM
@@ -22,4 +24,5 @@ jobs:
         - OSSRH_TOKEN
         - OSSRH_USER
     steps:
-      - ./gradlew publish
+      - . ./decrypt.sh
+      - ./gradlew publish -debug

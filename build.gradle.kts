@@ -5,7 +5,8 @@ plugins {
 }
 
 group = "dev.yavin"
-version = "0.5"
+version = "0.6"
+
 
 publishing {
     publications {
@@ -51,21 +52,25 @@ publishing {
             val snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/") //uri(layout.buildDirectory.dir("repos/snapshots"))
             url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
             credentials {
-//                username = project.findProperty("ossrhUsername") as String? ?: System.getenv("OSSRH_USER")
-//                password = project.findProperty("ossrhPassword") as String? ?: System.getenv("OSSRH_TOKEN")
-                username = System.getenv("OSSRH_USER")
-                password = System.getenv("OSSRH_TOKEN")
+                username = project.findProperty("ossrhUsername") as String? ?: System.getenv("OSSRH_USER")  as String?
+                password = project.findProperty("ossrhPassword") as String? ?: System.getenv("OSSRH_TOKEN")  as String?
+                //username = System.getenv("OSSRH_USER") as String?
+                //password = System.getenv("OSSRH_TOKEN") as String?
 
             }
         }
     }
 }
 
-project.setProperty("signing.gnupg.keyName", System.getenv("GPG_KEY"))
-project.setProperty("signing.gnupg.passphrase", System.getenv("GPG_ENCPHRASE"))
+//project.setProperty("signing.gnupg.keyName", System.getenv("GPG_KEY"))
+//project.setProperty("signing.gnupg.passphrase", System.getenv("GPG_ENCPHRASE"))
+project.setProperty("signing.password", System.getenv("GPG_SIGN_PASS"))
 
 signing {
-    useGpgCmd()
+    //useGpgCmd()
+    //val signingKey: String? by project
+    //val signingPassword: String? by project
+  //  useInMemoryPgpKeys(signingKey, signingPassword)
     sign(publishing.publications["mavenJava"])
 }
 
