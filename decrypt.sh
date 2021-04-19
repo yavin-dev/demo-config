@@ -4,6 +4,7 @@ set -ex
 
 # for openssl 1.1+ we need to add -pbkdf2 to remove the
 # warning but that option does not exist in openssl 1.0.x
+# debug
 
 export GPG_TTY=$(tty)
 
