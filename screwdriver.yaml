@@ -13,8 +13,6 @@ jobs:
     steps:
       - ./gradlew build
   publish:
-    environment:
-        GPG_ENCPHRASE: something
     requires: [~build]
     secrets:
         # Publishing to NPM
