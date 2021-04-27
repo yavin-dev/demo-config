@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "dev.yavin"
-version = "0.8"
+version = "0.9"
 
 
 publishing {
