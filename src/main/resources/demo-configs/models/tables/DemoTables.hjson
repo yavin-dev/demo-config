@@ -11,49 +11,49 @@
           friendlyName: Title Id
           category: Attributes
           type: TEXT
-          definition: '{{title_id}}'
+          definition: '{{$title_id}}'
         }
         {
           name: show_type
           friendlyName: Show Type
           category: Attributes
           type: TEXT
-          definition: '{{type}}'
+          definition: '{{$type}}'
         }
         {
           name: title
           friendlyName: Title
           category: Attributes
           type: TEXT
-          definition: '{{title}}'
+          definition: '{{$title}}'
         }
         {
           name: director
           friendlyName: Director
           category: Attributes
           type: TEXT
-          definition: '{{director}}'
+          definition: '{{$director}}'
         }
         {
           name: cast
           friendlyName: Cast List
           category: Attributes
           type: TEXT
-          definition: '{{cast_list}}'
+          definition: '{{$cast_list}}'
         }
         {
           name: country
           friendlyName: Countries
           category: Attributes
           type: TEXT
-          definition: '{{country}}'
+          definition: '{{$country}}'
         }
         {
           name: date_available
           friendlyName: Available Since
           category: Date
           type: TIME
-          definition: '{{date_added}}'
+          definition: '{{$date_added}}'
           grains: [
             {
                type: DAY
@@ -65,7 +65,7 @@
           friendlyName: Release Year
           category: Date
           type: TIME
-          definition: '{{release_year}}'
+          definition: '{{$release_year}}'
           grains: [
             {
                type: YEAR
@@ -77,21 +77,21 @@
           friendlyName: Film Rating
           category: Attributes
           type: TEXT
-          definition: '{{rating}}'
+          definition: '{{$rating}}'
         }
         {
           name: genres
           friendlyName: Genre
           category: Attributes
           type: TEXT
-          definition: '{{listed_in}}'
+          definition: '{{$listed_in}}'
         }
         {
           name: description
           friendlyName: Description
           category: Attributes
           type: TEXT
-          definition: '{{description}}'
+          definition: '{{$description}}'
         }
       ]
       measures: [
@@ -107,14 +107,14 @@
           friendlyName: Total Seasons
           category: Stats
           type: INTEGER
-          definition: "sum(cast (case when {{duration}} like '% Seasons' then REPLACE({{duration}}, ' Seasons', '') else '0' end AS INT))"
+          definition: "sum(cast (case when {{$duration}} like '% Seasons' then REPLACE({{$duration}}, ' Seasons', '') else '0' end AS INT))"
         }
         {
           name: movie_duration
           friendlyName: Duration (in mins)
           category: Stats
           type: INTEGER
-          definition: "sum(cast (case when {{duration}} like '% min' then REPLACE({{duration}}, ' min', '') else '0' end AS INT))"
+          definition: "sum(cast (case when {{$duration}} like '% min' then REPLACE({{$duration}}, ' min', '') else '0' end AS INT))"
         }
       ]
     }
